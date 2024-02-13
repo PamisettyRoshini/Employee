@@ -52,7 +52,7 @@ public class EmployeeController {
         return "Welcome";
     }
     @GetMapping
-    public String hello2() {
+    public String hello3() {
         return "Welcome 2";
     }
     @GetMapping("/hello1")
