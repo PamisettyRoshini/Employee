@@ -62,19 +62,14 @@ public class WebSecurityConfig {
                .anyRequest().authenticated()
                .and()
                 .exceptionHandling()
-                .accessDeniedHandler(new CustomAccessDeniedHandler() {
-                    @Override
-                    public void handle(HttpServletRequest request, HttpServletResponse response, AccessDeniedException accessDeniedException) throws IOException, ServletException {
-                        String errorMessage = "Access denied. You do not have permission to access this resource.";
-                        response.setStatus(javax.servlet.http.HttpServletResponse.SC_FORBIDDEN);
-                        response.setContentType("application/json");
-                        response.getWriter().write(errorMessage);
-
-                    }
-                })  .and().oauth2Login(Customizer.withDefaults())
+                .accessDeniedHandler(accessDeniedHandler())
+                .and().oauth2Login(Customizer.withDefaults())
                .formLogin(Customizer.withDefaults())
                 .build();
 
     }
-
+@Bean
+public AccessDeniedHandler accessDeniedHandler() {
+    return new CustomAccessDeniedHandler();
+}
 }
