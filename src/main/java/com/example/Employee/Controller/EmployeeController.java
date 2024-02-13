@@ -110,7 +110,7 @@ public class EmployeeController {
 
     @PutMapping("/{id}")
     //@RolesAllowed("ADMIN")
-    //check if the employee id given is valid or not,if so then check all the entered values are not null
+
     public ResponseEntity<?> updateEmployee(@PathVariable int id, @RequestBody EmployeeEntity updateEmployee) {
         try {
             if (id > 0) {
