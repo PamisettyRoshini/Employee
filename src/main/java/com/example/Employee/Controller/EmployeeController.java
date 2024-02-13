@@ -109,7 +109,7 @@ public class EmployeeController {
     }
 
     @PutMapping("/{id}")
-    //@RolesAllowed("ADMIN")
+
 
     public ResponseEntity<?> updateEmployee(@PathVariable int id, @RequestBody EmployeeEntity updateEmployee) {
         try {
