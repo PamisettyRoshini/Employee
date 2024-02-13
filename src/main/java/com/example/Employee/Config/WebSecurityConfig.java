@@ -23,7 +23,7 @@ import org.springframework.security.web.access.AccessDeniedHandler;
 
 import java.io.IOException;
 
-import static javax.management.Query.and;
+
 
 @Configuration
 @EnableWebSecurity
