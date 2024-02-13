@@ -7,7 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 
 @SpringBootApplication
-//@EnableSwagger2
+
 @OpenAPIDefinition(info = @Info(title = "Employee Service Api"))
 public class EmployeeApplication {
 
