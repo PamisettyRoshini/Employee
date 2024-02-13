@@ -10,7 +10,7 @@ import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-//import org.springframework.security.access.prepost.PreAuthorize;
+
 
 import org.springframework.web.bind.annotation.*;
 
@@ -93,6 +93,7 @@ public class EmployeeController {
                 logger.info("Employee with ID {} deleted successfully.", id);
                 return ok(result);
             } else {
+
                 logger.warn("No employee found with id: {}", id);
                 return notFound().build();
             }
