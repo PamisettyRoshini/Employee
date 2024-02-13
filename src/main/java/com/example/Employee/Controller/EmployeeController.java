@@ -103,7 +103,7 @@ public class EmployeeController {
             return empService.deleteAllEmployees();
         }
         @PutMapping("/{id}")
-        //@RolesAllowed("ADMIN")
+
         public EmployeeEntity updateEmployee ( @PathVariable int id, @RequestBody EmployeeEntity updateEmployee){
             return empService.updateEmployee(id, updateEmployee);
         }
