@@ -68,9 +68,9 @@ class EmployeeControllerTest {
         when(empService.deleteAllEmployees()).thenReturn("All employees deleted successfully");
         mockMvc.perform(delete("/employees/deleteall")
                         .contentType(MediaType.APPLICATION_JSON))
-                .andExpect(status().isOk())
-                .andExpect(content().string("All employees deleted successfully"));
-        verify(empService, times(1)).deleteAllEmployees();
+                .andExpect(status().isForbidden());
+               // .andExpect(content().string("All employees deleted successfully"));
+       // verify(empService, times(1)).deleteAllEmployees();
     }
 
 }

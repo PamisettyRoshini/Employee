@@ -32,7 +32,6 @@ public class WebSecurityConfig {
 
     @Bean
     public UserDetailsService userDetailsService(PasswordEncoder passwordEncoder) {
-
         UserDetails user = User.withUsername("user")
                 .password(passwordEncoder.encode("user123"))
                 .roles("USER")
@@ -72,7 +71,7 @@ public class WebSecurityConfig {
                         response.getWriter().write(errorMessage);
 
                     }
-                }) .and().oauth2Login(Customizer.withDefaults())
+                })  .and().oauth2Login(Customizer.withDefaults())
                .formLogin(Customizer.withDefaults())
                 .build();
 
