@@ -52,8 +52,8 @@ public class EmployeeController {
         return "Welcome";
     }
     @GetMapping
-    public String hello2() {
-        return "Welcome 2";
+    public String hello3() {
+        return "Welcome 3";
     }
     @GetMapping("/hello1")
     //@PreAuthorize("hasRole('USER')")
