@@ -9,6 +9,8 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.io.PrintWriter;
+
 @Component
 public  class CustomAccessDeniedHandler implements AccessDeniedHandler {
 
@@ -17,6 +19,8 @@ public  class CustomAccessDeniedHandler implements AccessDeniedHandler {
         String errorMessage = "Access denied. You do not have permission to access this resource.";
         response.setStatus(HttpServletResponse.SC_FORBIDDEN);
         response.setContentType("application/json");
-        response.getWriter().write(errorMessage);
+        PrintWriter writer = response.getWriter();
+        writer.print("{ \"error\": \"" + errorMessage + "\" }");
+        writer.flush();
     }
 }
